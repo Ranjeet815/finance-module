@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Form name="item" build="3.20.08" sqlDbName="testdb" width="39" height="6">
+  <ToolBar>
+    <ToolBarItem name="accept" text="Ok" image="ok"/>
+    <ToolBarItem name="cancel" text="cancel" image="cancel"/>
+    <ToolBarItem name="find" comment="Search for a record"/>
+    <ToolBarItem name="previous"/>
+    <ToolBarItem name="next"/>
+    <ToolBarSeparator/>
+    <ToolBarItem name="add" text="Add" image="add">
+      <LStr text="Add"/>
+    </ToolBarItem>
+    <ToolBarItem name="modify" text="Edit" image="edit">
+      <LStr text="Edit"/>
+    </ToolBarItem>
+    <ToolBarItem name="delete" text="Delete" image="delete">
+      <LStr text="Delete"/>
+    </ToolBarItem>
+    <ToolBarItem name="quit" text="Quit" comment="Exit the program" image="exit"/>
+  </ToolBar>
+  <Grid width="39" height="6">
+    <Label text="Item Code#" posY="0" posX="3" gridWidth="10"/>
+    <FormField name="itemm.itemcode" colName="itemcode" sqlType="INTEGER" fieldId="0" sqlTabName="itemm" tabIndex="1">
+      <Edit width="21" posY="0" posX="17" gridWidth="21"/>
+    </FormField>
+    <Label text="Item Name" posY="1" posX="3" gridWidth="9"/>
+    <FormField name="itemm.itemname" colName="itemname" sqlType="VARCHAR(50)" fieldId="1" sqlTabName="itemm" tabIndex="2">
+      <Edit width="21" posY="1" posX="17" gridWidth="21"/>
+    </FormField>
+    <Label text="Unit Measurement" posY="2" posX="3" gridWidth="16"/>
+    <FormField name="itemm.unitmeasurement" colName="unitmeasurement" sqlType="VARCHAR(50)" fieldId="2" sqlTabName="itemm" tabIndex="3">
+      <Edit width="18" posY="2" posX="20" gridWidth="18"/>
+    </FormField>
+    <Label text="Unit Price" posY="3" posX="3" gridWidth="10"/>
+    <FormField name="itemm.unitprice" colName="unitprice" sqlType="INTEGER" fieldId="3" sqlTabName="itemm" tabIndex="4">
+      <Edit width="21" posY="3" posX="17" gridWidth="21"/>
+    </FormField>
+  </Grid>
+  <RecordView tabName="itemm">
+    <Link colName="itemcode" fieldIdRef="0"/>
+    <Link colName="itemname" fieldIdRef="1"/>
+    <Link colName="unitmeasurement" fieldIdRef="2"/>
+    <Link colName="unitprice" fieldIdRef="3"/>
+  </RecordView>
+</Form>

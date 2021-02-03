@@ -1,0 +1,37 @@
+TOPMENU financetopmenu
+   GROUP master_data (text=%"Master Data")
+    COMMAND account(text=%"Account")
+    COMMAND company(text=%"Company")
+     COMMAND customer(text=%"Customer")
+ COMMAND supplier(text=%"Supplier")
+      COMMAND item(text=%"Item")
+  END -- master
+ 
+  
+  GROUP Transaction(text=%"Transaction")
+ COMMAND transection_sup(text=%"transection_sup")
+ COMMAND transection_cust(text=%"transection_cust")
+ 
+  END --transection
+  GROUP Exit(text=%"Quit")
+    COMMAND exit(text=%"Quit")
+  END -- quit
+END -- topmenu
+  
+ 
+  
+LAYOUT 
+GRID 
+    {
+            ["  "]
+                ["       "]     [label18   ]
+            ["  "]
+                ["       "]   [im1]
+        
+    }
+END 
+END
+ATTRIBUTES 
+LABEL label18:label18, text=%"FINANCE MODULE ",STYLE="fontsize3";
+IMAGE im1:im1,IMAGE = "/home/rkt/Documents/finance module/images/home.jpeg";
+END 

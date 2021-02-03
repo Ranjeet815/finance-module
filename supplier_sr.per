@@ -1,0 +1,41 @@
+SCHEMA testdb
+TOOLBAR
+   ITEM accept ( TEXT="Ok", IMAGE="ok" )
+   ITEM cancel ( TEXT="cancel", IMAGE="cancel" )
+   ITEM find (COMMENT="Search for a record") 
+   ITEM previous
+   ITEM next
+  
+ 
+   SEPARATOR
+    ITEM Add(text=%"Add",IMAGE="add")
+    ITEM Modify(text=%"Edit",IMAGE="edit")
+    ITEM Delete (text=%"Delete",IMAGE="delete")
+    ITEM quit (TEXT="Quit", COMMENT="Exit the program", IMAGE="exit")
+   END
+
+LAYOUT
+  GRID
+  {
+     Supplier Code#   [f01                  ] 
+     Supplier Name    [f02                  ]
+     Address1         [f03                  ]
+     Address2         [f04                  ]
+     pin Code         [f05                  ] 
+    
+  }   
+  END   --grid
+END  -- layout
+
+TABLES
+ supplier
+
+ATTRIBUTES
+EDIT f01=supplier.suppliercode;
+EDIT f02=supplier.suppliername;
+EDIT f03=supplier.address1;
+EDIT  f04=supplier.address2;
+EDIT f05=supplier.pincode;
+
+
+END

@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Form name="trans" build="3.20.08" sqlDbName="testdb" width="126" height="13">
+  <VBox>
+    <Grid width="77" height="7">
+      <FormField name="formonly.mode_label" colName="mode_label" fieldId="0" sqlTabName="formonly" noEntry="1" tabIndex="1">
+        <Label width="62" posY="0" posX="1" gridWidth="62"/>
+      </FormField>
+      <Group text="Customer Details" posY="1" posX="0" gridWidth="77" gridHeight="7">
+        <Label text="Customer Code #:" posY="1" posX="6" gridWidth="16"/>
+        <FormField name="customer.customercode" colName="customercode" sqlType="INTEGER" fieldId="1" sqlTabName="customer" tabIndex="2">
+          <Edit width="22" posY="1" posX="23" gridWidth="22"/>
+        </FormField>
+        <Label text="Customer Name:" posY="2" posX="6" gridWidth="14"/>
+        <FormField name="customer.customername" colName="customername" sqlType="CHAR(50)" fieldId="2" sqlTabName="customer" tabIndex="3">
+          <Edit width="22" posY="2" posX="23" gridWidth="22"/>
+        </FormField>
+        <Label text="Address1" posY="3" posX="6" gridWidth="8"/>
+        <FormField name="customer.address1" colName="address1" sqlType="VARCHAR(100)" fieldId="3" sqlTabName="customer" tabIndex="4">
+          <Edit width="22" posY="3" posX="23" gridWidth="22"/>
+        </FormField>
+        <Label text="Address2" posY="4" posX="6" gridWidth="8"/>
+        <FormField name="customer.address2" colName="address2" sqlType="VARCHAR(100)" fieldId="4" sqlTabName="customer" tabIndex="5">
+          <Edit width="22" posY="4" posX="23" gridWidth="22"/>
+        </FormField>
+        <Label text="pin Code" posY="5" posX="6" gridWidth="8"/>
+        <FormField name="customer.pincode" colName="pincode" sqlType="INTEGER" fieldId="5" sqlTabName="customer" tabIndex="6">
+          <Edit width="22" posY="5" posX="23" gridWidth="22"/>
+        </FormField>
+      </Group>
+    </Grid>
+    <Group text="ALL customer Details">
+      <Table pageSize="4" tabName="e_event">
+        <TableColumn text="Supp_code#" name="trans_details.suppliercode" colName="suppliercode" sqlType="INTEGER" required="1" notNull="1" fieldId="6" sqlTabName="trans_details" tabIndex="7" numAlign="1">
+          <Edit width="12"/>
+        </TableColumn>
+        <TableColumn text="Tran NUM" name="trans_details.trans_num" colName="trans_num" sqlType="INTEGER" required="1" notNull="1" fieldId="7" sqlTabName="trans_details" tabIndex="8" numAlign="1">
+          <Edit width="12"/>
+        </TableColumn>
+        <TableColumn text="T Date" name="trans_details.tran_date" colName="tran_date" sqlType="DATE" fieldId="8" sqlTabName="trans_details" tabIndex="9">
+          <DateEdit width="8"/>
+        </TableColumn>
+        <TableColumn text="A Type" name="trans_details.acc_type" colName="acc_type" sqlType="CHAR(10)" fieldId="9" sqlTabName="trans_details" tabIndex="10">
+          <Edit width="9"/>
+        </TableColumn>
+        <TableColumn text="item_code" name="trans_details.item_code" colName="item_code" sqlType="INTEGER" required="1" notNull="1" fieldId="10" sqlTabName="trans_details" tabIndex="11" numAlign="1">
+          <Edit width="12"/>
+        </TableColumn>
+        <TableColumn text="quantity" name="trans_details.quantity" colName="quantity" sqlType="INTEGER" fieldId="11" sqlTabName="trans_details" tabIndex="12" numAlign="1">
+          <Edit width="10"/>
+        </TableColumn>
+        <TableColumn text="rate" name="trans_details.rate" colName="rate" sqlType="INTEGER" fieldId="12" sqlTabName="trans_details" tabIndex="13" numAlign="1">
+          <Edit width="9"/>
+        </TableColumn>
+        <TableColumn text="Amount" name="trans_details.ammount" colName="ammount" sqlType="INTEGER" fieldId="13" sqlTabName="trans_details" tabIndex="14" numAlign="1">
+          <Edit width="10"/>
+        </TableColumn>
+        <TableColumn text="Amount_paid" name="trans_details.ammount_paid" colName="ammount_paid" sqlType="INTEGER" fieldId="14" sqlTabName="trans_details" tabIndex="15" numAlign="1">
+          <Edit width="14"/>
+        </TableColumn>
+        <TableColumn text="status" name="trans_details.status" colName="status" sqlType="INTEGER" fieldId="15" sqlTabName="trans_details" tabIndex="16" numAlign="1">
+          <Edit width="13"/>
+        </TableColumn>
+      </Table>
+    </Group>
+  </VBox>
+  <RecordView tabName="customer">
+    <Link colName="customercode" fieldIdRef="1"/>
+    <Link colName="customername" fieldIdRef="2"/>
+    <Link colName="address1" fieldIdRef="3"/>
+    <Link colName="address2" fieldIdRef="4"/>
+    <Link colName="pincode" fieldIdRef="5"/>
+  </RecordView>
+  <RecordView tabName="trans_details">
+    <Link colName="suppliercode" fieldIdRef="6"/>
+    <Link colName="trans_num" fieldIdRef="7"/>
+    <Link colName="tran_date" fieldIdRef="8"/>
+    <Link colName="acc_type" fieldIdRef="9"/>
+    <Link colName="item_code" fieldIdRef="10"/>
+    <Link colName="quantity" fieldIdRef="11"/>
+    <Link colName="rate" fieldIdRef="12"/>
+    <Link colName="ammount" fieldIdRef="13"/>
+    <Link colName="ammount_paid" fieldIdRef="14"/>
+    <Link colName="status" fieldIdRef="15"/>
+  </RecordView>
+  <RecordView tabName="formonly">
+    <Link colName="mode_label" fieldIdRef="0"/>
+  </RecordView>
+  <RecordView tabName="u_user">
+    <Link colName="customercode" fieldIdRef="1"/>
+    <Link colName="customername" fieldIdRef="2"/>
+    <Link colName="address1" fieldIdRef="3"/>
+    <Link colName="address2" fieldIdRef="4"/>
+    <Link colName="pincode" fieldIdRef="5"/>
+  </RecordView>
+</Form>

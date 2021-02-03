@@ -1,0 +1,39 @@
+SCHEMA testdb
+TOOLBAR
+   ITEM accept ( TEXT="Ok", IMAGE="ok" )
+   ITEM cancel ( TEXT="cancel", IMAGE="cancel" )
+   ITEM find (COMMENT="Search for a record") 
+   ITEM previous
+   ITEM next
+  
+ 
+   SEPARATOR
+  ITEM Add(text=%"Add",IMAGE="add")
+  ITEM Modify(text=%"Edit",IMAGE="edit")
+  ITEM Delete (text=%"Delete",IMAGE="delete")
+  ITEM quit (TEXT="Quit", COMMENT="Exit the program", IMAGE="exit")
+   END
+
+LAYOUT
+  GRID
+  {
+     Item Code#   [f01                  ] 
+     Item Name    [f02                  ]
+     Unit Measurement[f03               ]
+     Unit Price   [f04                  ] 
+      
+    
+  }   
+  END   --grid
+END  -- layout
+
+TABLES
+ itemm
+
+ATTRIBUTES
+EDIT f01=itemm.itemcode;
+EDIT f02=itemm.itemname;
+
+EDIT f03=itemm.unitmeasurement;
+EDIT f04=itemm.unitprice; --, REQUIRED, ITEMS = ("Dabit",  "Creadit");
+END

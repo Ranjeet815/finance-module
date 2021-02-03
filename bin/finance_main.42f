@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Form name="finance_main" build="3.20.08" width="40" height="5">
+  <TopMenu name="financetopmenu">
+    <TopMenuGroup name="master_data" text="Master Data">
+      <LStr text="Master Data"/>
+      <TopMenuCommand name="account" text="Account">
+        <LStr text="Account"/>
+      </TopMenuCommand>
+      <TopMenuCommand name="company" text="Company">
+        <LStr text="Company"/>
+      </TopMenuCommand>
+      <TopMenuCommand name="customer" text="Customer">
+        <LStr text="Customer"/>
+      </TopMenuCommand>
+      <TopMenuCommand name="supplier" text="Supplier">
+        <LStr text="Supplier"/>
+      </TopMenuCommand>
+      <TopMenuCommand name="item" text="Item">
+        <LStr text="Item"/>
+      </TopMenuCommand>
+    </TopMenuGroup>
+    <TopMenuGroup name="transaction" text="Transaction">
+      <LStr text="Transaction"/>
+      <TopMenuCommand name="transection_sup" text="transection_sup">
+        <LStr text="transection_sup"/>
+      </TopMenuCommand>
+      <TopMenuCommand name="transection_cust" text="transection_cust">
+        <LStr text="transection_cust"/>
+      </TopMenuCommand>
+    </TopMenuGroup>
+    <TopMenuGroup name="exit" text="Quit">
+      <LStr text="Quit"/>
+      <TopMenuCommand name="exit" text="Quit">
+        <LStr text="Quit"/>
+      </TopMenuCommand>
+    </TopMenuGroup>
+  </TopMenu>
+  <Grid width="40" height="5">
+    <Label text="  " posY="0" posX="9" gridWidth="4"/>
+    <Label text="       " posY="1" posX="13" gridWidth="9"/>
+    <Label name="label18" width="10" text="FINANCE MODULE " style="fontsize3" posY="1" posX="29" gridWidth="10">
+      <LStr text="FINANCE MODULE "/>
+    </Label>
+    <Label text="  " posY="2" posX="9" gridWidth="4"/>
+    <Label text="       " posY="3" posX="13" gridWidth="9"/>
+    <Image name="im1" width="3" image="/home/rkt/Documents/finance module/images/home.jpeg" posY="3" posX="27" gridWidth="3"/>
+  </Grid>
+</Form>

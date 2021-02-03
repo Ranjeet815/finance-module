@@ -1,0 +1,87 @@
+SCHEMA testdb
+
+LAYOUT
+    VBOX
+        GRID
+{
+[lbl001                                                        ]
+<G "Customer Details"                                                       >
+      Customer Code #:[f01                   ]  
+      Customer Name:  [f02                   ] 
+      Address1        [f03                   ]
+      Address2        [f04                   ]
+      pin Code        [f05                   ] 
+}
+
+
+      END --GRID
+       GROUP(TEXT="ALL customer Details")
+          TABLE
+{
+     Supp_code#   Tran NUM      T Date     A Type    item_code    quantity    rate      Amount     Amount_paid   status
+    [f06         |f07         |f08       |f09      |f10         |f11       |f12      |f13       |f14           |f15          ]
+    [f06         |f07         |f08       |f09      |f10         |f11       |f12      |f13       |f14           |f15          ]
+    [f06         |f07         |f08       |f09      |f10         |f11       |f12      |f13       |f14           |f15          ]
+    [f06         |f07         |f08       |f09      |f10         |f11       |f12      |f13       |f14           |f15          ]
+
+}
+      END --TABLE
+      END --GROUP
+    END --VBOX
+END --LAYOUT
+
+TABLES
+customer, trans_details
+
+END --TABLES
+
+ATTRIBUTES
+
+LABEL lbl001 = formonly.mode_label;
+    
+EDIT f01 = customer.customercode;
+EDIT f02 = customer.customername;
+EDIT f03 = customer.address1;
+EDIT f04 = customer.address2;
+EDIT f05 = customer.pincode;
+
+
+EDIT f06 = trans_details.suppliercode;
+EDIT f07 = trans_details.trans_num;
+DATEEDIT  f08 = trans_details.tran_date;
+EDIT f09 = trans_details.acc_type;
+EDIT f10 = trans_details.item_code;
+EDIT f11 = trans_details.quantity;
+EDIT f12 = trans_details.rate;
+EDIT f13 = trans_details.ammount;
+EDIT f14 = trans_details.ammount_paid;
+EDIT f15 = trans_details.status;
+   
+  
+    
+
+END --ATTRIBUTES
+
+INSTRUCTIONS
+
+    SCREEN RECORD U_User  (customer.customercode,
+                           customer.customername,
+                           customer.address1,
+                           customer.address2,
+                           customer.pincode);
+                            
+
+    SCREEN RECORD E_Event(trans_details.suppliercode,
+                           trans_details.trans_num,
+                           trans_details.tran_date,
+                           trans_details.acc_type,
+                           trans_details.item_code,
+                          trans_details.quantity,
+                          trans_details.rate,
+                          trans_details.ammount,
+                          trans_details.ammount_paid,
+                          trans_details.status );
+                          
+        
+END --INSTRUCTIONS
+

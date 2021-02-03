@@ -1,0 +1,42 @@
+SCHEMA testdb
+TOOLBAR
+   ITEM accept ( TEXT="Ok", IMAGE="ok" )
+   ITEM cancel ( TEXT="cancel", IMAGE="cancel" )
+   ITEM find (COMMENT="Search for a record") 
+   ITEM previous
+   ITEM next
+  
+ 
+   SEPARATOR
+   ITEM Add(text=%"Add",IMAGE="add")
+  ITEM Modify(text=%"Edit",IMAGE="edit")
+  ITEM Delete (text=%"Delete",IMAGE="delete")
+  SEPARATOR toolbarseparator2
+  ITEM save(text=%"Save",IMAGE="save")
+  ITEM quit (TEXT="Quit", COMMENT="Exit the program", IMAGE="exit")
+   END
+
+LAYOUT
+  GRID
+  
+  {
+  <G group2                                  >
+     Account Code#   [f01                  ] 
+     Account Name    [f02                  ]
+     account Type    [f03                  ]
+  <                                          >   
+    
+  }   
+  END   --grid
+END  -- layout
+
+TABLES
+ accountm
+
+ATTRIBUTES
+GROUP group2:group2 ,STYLE="group-dept";
+EDIT f01=accountm.accountcode;
+EDIT f02=accountm.accountname;
+
+EDIT f03=accountm.accounttype; --, REQUIRED, ITEMS = ("Dabit",  "Creadit");
+END

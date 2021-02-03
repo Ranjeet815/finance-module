@@ -1,0 +1,9 @@
+Date: 01/29/2021    Time: 19:50:14
+Program error at 'tans_main.4gl', line number 49.
+FORMS statement error number -1147.
+You cannot CLOSE, CLEAR or make CURRENT an unopened window.
+Date: 01/29/2021    Time: 19:50:14
+#0 errorHandler() at tans_main.4gl:537
+#1 open_trans() at tans_main.4gl:49
+#2 main() at finnace-module.4gl:33
+

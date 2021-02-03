@@ -1,0 +1,41 @@
+SCHEMA testdb
+TOOLBAR
+   ITEM accept ( TEXT="Ok", IMAGE="ok" )
+  ITEM cancel ( TEXT="cancel", IMAGE="cancel" )
+   ITEM find (COMMENT="Search for a record") 
+   ITEM previous
+   ITEM next
+  
+ 
+   SEPARATOR
+  ITEM Add(text=%"Add",IMAGE="add")
+  ITEM Modify(text=%"Edit",IMAGE="edit")
+  ITEM Delete (text=%"Delete",IMAGE="delete")
+  ITEM quit (TEXT="Quit", COMMENT="Exit the program", IMAGE="exit")
+   END
+
+LAYOUT
+  GRID
+  {
+     Company ID#   [f01                  ] 
+     Company Name  [f02                  ]
+     Address1      [f03                  ]
+     Address2      [f04                  ]
+     Pin Code      [f05                  ] 
+     
+  }   
+  END   --grid
+END  -- layout
+
+TABLES
+ company
+
+ATTRIBUTES
+EDIT f01=company.companycode;
+EDIT f02=company.companyname;
+EDIT f03=company.address1;
+EDIT  f04=company.address2;
+EDIT  f05=company.pincode;
+
+
+END

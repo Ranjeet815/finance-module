@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Form name="company_sr" build="3.20.08" sqlDbName="testdb" width="40" height="6">
+  <ToolBar>
+    <ToolBarItem name="accept" text="Ok" image="ok"/>
+    <ToolBarItem name="cancel" text="cancel" image="cancel"/>
+    <ToolBarItem name="find" comment="Search for a record"/>
+    <ToolBarItem name="previous"/>
+    <ToolBarItem name="next"/>
+    <ToolBarSeparator/>
+    <ToolBarItem name="add" text="Add" image="add">
+      <LStr text="Add"/>
+    </ToolBarItem>
+    <ToolBarItem name="modify" text="Edit" image="edit">
+      <LStr text="Edit"/>
+    </ToolBarItem>
+    <ToolBarItem name="delete" text="Delete" image="delete">
+      <LStr text="Delete"/>
+    </ToolBarItem>
+    <ToolBarItem name="quit" text="Quit" comment="Exit the program" image="exit"/>
+  </ToolBar>
+  <Grid width="40" height="6">
+    <Label text="Company ID#" posY="0" posX="3" gridWidth="11"/>
+    <FormField name="company.companycode" colName="companycode" sqlType="INTEGER" fieldId="0" sqlTabName="company" tabIndex="1">
+      <Edit width="21" posY="0" posX="18" gridWidth="21"/>
+    </FormField>
+    <Label text="Company Name" posY="1" posX="3" gridWidth="12"/>
+    <FormField name="company.companyname" colName="companyname" sqlType="CHAR(50)" fieldId="1" sqlTabName="company" tabIndex="2">
+      <Edit width="21" posY="1" posX="18" gridWidth="21"/>
+    </FormField>
+    <Label text="Address1" posY="2" posX="3" gridWidth="8"/>
+    <FormField name="company.address1" colName="address1" sqlType="VARCHAR(100)" fieldId="2" sqlTabName="company" tabIndex="3">
+      <Edit width="21" posY="2" posX="18" gridWidth="21"/>
+    </FormField>
+    <Label text="Address2" posY="3" posX="3" gridWidth="8"/>
+    <FormField name="company.address2" colName="address2" sqlType="VARCHAR(100)" fieldId="3" sqlTabName="company" tabIndex="4">
+      <Edit width="21" posY="3" posX="18" gridWidth="21"/>
+    </FormField>
+    <Label text="Pin Code" posY="4" posX="3" gridWidth="8"/>
+    <FormField name="company.pincode" colName="pincode" sqlType="INTEGER" fieldId="4" sqlTabName="company" tabIndex="5">
+      <Edit width="21" posY="4" posX="18" gridWidth="21"/>
+    </FormField>
+  </Grid>
+  <RecordView tabName="company">
+    <Link colName="companycode" fieldIdRef="0"/>
+    <Link colName="companyname" fieldIdRef="1"/>
+    <Link colName="address1" fieldIdRef="2"/>
+    <Link colName="address2" fieldIdRef="3"/>
+    <Link colName="pincode" fieldIdRef="4"/>
+  </RecordView>
+</Form>

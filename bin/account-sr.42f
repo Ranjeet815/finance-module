@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Form name="account-sr" build="3.20.08" sqlDbName="testdb" width="44" height="6">
+  <ToolBar>
+    <ToolBarItem name="accept" text="Ok" image="ok"/>
+    <ToolBarItem name="cancel" text="cancel" image="cancel"/>
+    <ToolBarItem name="find" comment="Search for a record"/>
+    <ToolBarItem name="previous"/>
+    <ToolBarItem name="next"/>
+    <ToolBarSeparator/>
+    <ToolBarItem name="add" text="Add" image="add">
+      <LStr text="Add"/>
+    </ToolBarItem>
+    <ToolBarItem name="modify" text="Edit" image="edit">
+      <LStr text="Edit"/>
+    </ToolBarItem>
+    <ToolBarItem name="delete" text="Delete" image="delete">
+      <LStr text="Delete"/>
+    </ToolBarItem>
+    <ToolBarSeparator name="toolbarseparator2"/>
+    <ToolBarItem name="save" text="Save" image="save">
+      <LStr text="Save"/>
+    </ToolBarItem>
+    <ToolBarItem name="quit" text="Quit" comment="Exit the program" image="exit"/>
+  </ToolBar>
+  <Grid width="44" height="6">
+    <Group name="group2" style="group-dept" posY="0" posX="0" gridWidth="44" gridHeight="5">
+      <Label text="Account Code#" posY="1" posX="3" gridWidth="13"/>
+      <FormField name="accountm.accountcode" colName="accountcode" sqlType="INTEGER" fieldId="0" sqlTabName="accountm" tabIndex="1">
+        <Edit width="21" posY="1" posX="20" gridWidth="21"/>
+      </FormField>
+      <Label text="Account Name" posY="2" posX="3" gridWidth="12"/>
+      <FormField name="accountm.accountname" colName="accountname" sqlType="VARCHAR(100)" fieldId="1" sqlTabName="accountm" tabIndex="2">
+        <Edit width="21" posY="2" posX="20" gridWidth="21"/>
+      </FormField>
+      <Label text="account Type" posY="3" posX="3" gridWidth="12"/>
+      <FormField name="accountm.accounttype" colName="accounttype" sqlType="VARCHAR(50)" fieldId="2" sqlTabName="accountm" tabIndex="3">
+        <Edit width="21" posY="3" posX="20" gridWidth="21"/>
+      </FormField>
+    </Group>
+  </Grid>
+  <RecordView tabName="accountm">
+    <Link colName="accountcode" fieldIdRef="0"/>
+    <Link colName="accountname" fieldIdRef="1"/>
+    <Link colName="accounttype" fieldIdRef="2"/>
+  </RecordView>
+</Form>

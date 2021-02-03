@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<WorkspaceDatabase fileContentsEncoding="UTF-8" version="3.0">
+<File n="comboboxHelper.4gl" s="2" ts="20210129194651525">
+<Fct c="17" el="39" l="28" n="loadStoreCombo(pCombo ui.ComboBox)" t="F" v="pub"/>
+<Fct c="17" el="26" l="15" n="loadFactoryCombo(pCombo ui.ComboBox)" t="F" v="pub"/>
+</File>
+<File n="DynamicUI.4gl" s="2" ts="20210129194651415">
+<Fct c="18" el="293" l="268" n="displayArrayValues(pDialog ui.Dialog,pJsonArray util.JSONArray,pFieldList DYNAMIC ARRAY OF RECORD,pFieldPrefix STRING,pScreenRecord STRING)" t="F" v="prv"/>
+<Fct c="18" el="266" l="242" n="getWherePart(pDialog ui.Dialog,pFieldList DYNAMIC ARRAY OF RECORD)" t="F" v="prv"/>
+<Fct c="18" el="240" l="224" n="getRecordDefinition(pRecordNode om.DomNode)" t="F" v="prv"/>
+<Fct c="17" el="221" l="130" n="dynamicSearchList(pRecordNode om.DomNode,pScreenRecord STRING,pArrayRecordPrefix STRING,pCallback RECORD)" t="F" v="pub">
+<Call c="22" l="146" n="getRecordDefinition" t="F"/>
+<Call c="62" l="207" n="getWherePart" t="F"/>
+<Call c="26" l="208" n="displayArrayValues" t="F"/>
+</Fct>
+<Fct c="17" el="128" l="73" n="dynamicDisplayArray(pRecordNode om.DomNode,pJsonArray util.JSONArray,pScreenRecord STRING,pCallback RECORD)" t="F" v="pub">
+<Call c="22" l="87" n="getRecordDefinition" t="F"/>
+</Fct>
+<Fct c="17" el="71" l="39" n="dynamicConstruct(pRecordNode om.DomNode)" t="F" v="pub">
+<Call c="22" l="44" n="getRecordDefinition" t="F"/>
+<Call c="12" l="69" n="getWherePart" t="F"/>
+</Fct>
+</File>
+<File n="enums.4gl" s="2" ts="20210129194651546"/>
+<File n="UIHelper.4gl" s="2" ts="20210129194651436">
+<Fct c="17" el="19" l="8" n="deleteConfirmation()" t="F" v="pub"/>
+<Fct c="17" el="6" l="1" n="informationDialog(pTitle STRING,pMessage STRING)" t="F" v="pub"/>
+</File>
+<File n="account_fun.4gl" s="2" ts="20210125113802415">
+<Fct c="10" el="364" l="357" n="clean_up_desg()" t="F" v="pub"/>
+<Fct c="10" el="354" l="327" n="delete_check_desg()" t="F" v="pub"/>
+<Fct c="10" el="325" l="311" n="delete_dsg()" t="F" v="pub"/>
+<Fct c="10" el="309" l="244" n="update_dsg()" t="F" v="pub"/>
+<Fct c="10" el="242" l="226" n="insert_dsg()" t="F" v="pub"/>
+<Fct c="11" el="223" l="162" n="inpupd_dsg(au_flag CHAR(1))" t="F" v="pub">
+<Call c="19" l="201" n="display_dsg" t="F"/>
+</Fct>
+<Fct c="11" el="157" l="155" n="display_dsg()" t="F" v="pub"/>
+<Fct c="10" el="149" l="131" n="fetch_rel_dsg(p_fetch_flag SMALLINT)" t="F" v="pub">
+<Call c="8" l="136" n="fetch_dsg" t="F"/>
+<Call c="10" l="140" n="display_dsg" t="F"/>
+</Fct>
+<Fct c="10" el="127" l="101" n="fetch_dsg(p_fetch_flag SMALLINT)" t="F" v="pub"/>
+<Fct c="10" el="97" l="77" n="dsg_select(p_where_clause STRING)" t="F" v="pub">
+<Call c="8" l="89" n="fetch_dsg" t="F"/>
+</Fct>
+<Fct c="10" el="75" l="54" n="get_dsg_cnt_desg(p_where_clause STRING)" t="F" v="pub"/>
+<Fct c="11" el="52" l="17" n="query_dsg()" t="F" v="pub">
+<Call c="10" l="34" n="get_dsg_cnt_desg" t="F"/>
+<Call c="13" l="38" n="dsg_select" t="F"/>
+<Call c="12" l="47" n="display_dsg" t="F"/>
+</Fct>
+</File>
+<File n="account_main.4gl" s="2" ts="20210127140102736">
+<Dep t="account_fun.4gl"/>
+<Fct c="17" el="49" l="3" n="open_account()" t="F" v="pub">
+<Call c="12" i="account_fun" l="15" n="query_dsg" t="F"/>
+<Call c="14" i="account_fun" l="18" n="fetch_rel_dsg" t="F"/>
+<Call c="14" i="account_fun" l="25" n="fetch_rel_dsg" t="F"/>
+<Call c="11" i="account_fun" l="30" n="inpupd_dsg" t="F"/>
+<Call c="14" i="account_fun" l="31" n="insert_dsg" t="F"/>
+<Call c="11" i="account_fun" l="34" n="delete_check_desg" t="F"/>
+<Call c="15" i="account_fun" l="35" n="delete_dsg" t="F"/>
+<Call c="8" i="account_fun" l="38" n="inpupd_dsg" t="F"/>
+<Call c="14" i="account_fun" l="39" n="update_dsg" t="F"/>
+</Fct>
+</File>
+<File n="com_main.4gl" s="2" ts="20210127140102754">
+<Dep t="company_fun.4gl"/>
+<Fct c="10" el="49" l="3" n="open_company()" t="F" v="pub">
+<Call c="12" i="company_fun" l="15" n="query_dsg1" t="F"/>
+<Call c="14" i="company_fun" l="18" n="fetch_rel_com" t="F"/>
+<Call c="14" i="company_fun" l="25" n="fetch_rel_com" t="F"/>
+<Call c="11" i="company_fun" l="30" n="inpupd_com" t="F"/>
+<Call c="14" i="company_fun" l="31" n="insert_com" t="F"/>
+<Call c="11" i="company_fun" l="34" n="delete_check_com" t="F"/>
+<Call c="15" i="company_fun" l="35" n="delete_com" t="F"/>
+<Call c="8" i="company_fun" l="38" n="inpupd_com" t="F"/>
+<Call c="14" i="company_fun" l="39" n="update_com" t="F"/>
+</Fct>
+</File>
+<File n="company_fun.4gl" s="2" ts="20210125124612631">
+<Fct c="10" el="372" l="365" n="clean_up_com()" t="F" v="pub"/>
+<Fct c="10" el="362" l="335" n="delete_check_com()" t="F" v="pub"/>
+<Fct c="10" el="333" l="319" n="delete_com()" t="F" v="pub"/>
+<Fct c="10" el="317" l="249" n="update_com()" t="F" v="pub"/>
+<Fct c="10" el="247" l="229" n="insert_com()" t="F" v="pub"/>
+<Fct c="11" el="226" l="164" n="inpupd_com(au_flag CHAR(1))" t="F" v="pub">
+<Call c="19" l="204" n="display_com" t="F"/>
+</Fct>
+<Fct c="11" el="159" l="157" n="display_com()" t="F" v="pub"/>
+<Fct c="10" el="151" l="133" n="fetch_rel_com(p_fetch_flag SMALLINT)" t="F" v="pub">
+<Call c="8" l="138" n="fetch_com" t="F"/>
+<Call c="10" l="142" n="display_com" t="F"/>
+</Fct>
+<Fct c="10" el="129" l="103" n="fetch_com(p_fetch_flag SMALLINT)" t="F" v="pub"/>
+<Fct c="10" el="99" l="79" n="dsg_select1(p_where_clause STRING)" t="F" v="pub">
+<Call c="8" l="91" n="fetch_com" t="F"/>
+</Fct>
+<Fct c="10" el="77" l="56" n="get_dsg_cnt_desg1(p_where_clause STRING)" t="F" v="pub"/>
+<Fct c="10" el="54" l="19" n="query_dsg1()" t="F" v="pub">
+<Call c="10" l="36" n="get_dsg_cnt_desg1" t="F"/>
+<Call c="13" l="40" n="dsg_select1" t="F"/>
+<Call c="12" l="49" n="display_com" t="F"/>
+</Fct>
+</File>
+<File n="cust_fun.4gl" s="2" ts="20210125172440548">
+<Fct c="10" el="372" l="365" n="clean_up_cust()" t="F" v="pub"/>
+<Fct c="10" el="362" l="335" n="delete_check_cust()" t="F" v="pub"/>
+<Fct c="10" el="333" l="319" n="delete_cust()" t="F" v="pub"/>
+<Fct c="10" el="317" l="249" n="update_cust()" t="F" v="pub"/>
+<Fct c="10" el="247" l="229" n="insert_cust()" t="F" v="pub"/>
+<Fct c="11" el="226" l="164" n="inpupd_cust(au_flag CHAR(1))" t="F" v="pub">
+<Call c="19" l="204" n="display_cust" t="F"/>
+</Fct>
+<Fct c="11" el="159" l="157" n="display_cust()" t="F" v="pub"/>
+<Fct c="10" el="151" l="133" n="fetch_rel_cust(p_fetch_flag SMALLINT)" t="F" v="pub">
+<Call c="8" l="138" n="fetch_cust" t="F"/>
+<Call c="10" l="142" n="display_cust" t="F"/>
+</Fct>
+<Fct c="10" el="129" l="103" n="fetch_cust(p_fetch_flag SMALLINT)" t="F" v="pub"/>
+<Fct c="10" el="99" l="79" n="cust_select(p_where_clause STRING)" t="F" v="pub">
+<Call c="8" l="91" n="fetch_cust" t="F"/>
+</Fct>
+<Fct c="10" el="77" l="56" n="get_dsg_cnt_cust(p_where_clause STRING)" t="F" v="pub"/>
+<Fct c="10" el="54" l="19" n="query_cust()" t="F" v="pub">
+<Call c="10" l="36" n="get_dsg_cnt_cust" t="F"/>
+<Call c="13" l="40" n="cust_select" t="F"/>
+<Call c="12" l="49" n="display_cust" t="F"/>
+</Fct>
+</File>
+<File n="cust_main.4gl" s="2" ts="20210127140102719">
+<Dep t="cust_fun.4gl"/>
+<Fct c="11" el="49" l="3" n="open_customer()" t="F" v="pub">
+<Call c="12" i="cust_fun" l="15" n="query_cust" t="F"/>
+<Call c="14" i="cust_fun" l="18" n="fetch_rel_cust" t="F"/>
+<Call c="14" i="cust_fun" l="25" n="fetch_rel_cust" t="F"/>
+<Call c="11" i="cust_fun" l="30" n="inpupd_cust" t="F"/>
+<Call c="14" l="31" n="insert_com" t="F"/>
+<Call c="11" i="cust_fun" l="34" n="delete_check_cust" t="F"/>
+<Call c="15" i="cust_fun" l="35" n="delete_cust" t="F"/>
+<Call c="8" i="cust_fun" l="38" n="inpupd_cust" t="F"/>
+<Call c="14" i="cust_fun" l="39" n="update_cust" t="F"/>
+</Fct>
+</File>
+<File n="item_fun.4gl" s="2" ts="20210125172440569">
+<Fct c="10" el="370" l="363" n="clean_up_itm()" t="F" v="pub"/>
+<Fct c="10" el="360" l="333" n="delete_check_itm()" t="F" v="pub"/>
+<Fct c="10" el="331" l="317" n="delete_itm()" t="F" v="pub"/>
+<Fct c="10" el="315" l="248" n="update_itm()" t="F" v="pub"/>
+<Fct c="10" el="246" l="229" n="insert_itm()" t="F" v="pub"/>
+<Fct c="11" el="226" l="164" n="inpupd_itm(au_flag CHAR(1))" t="F" v="pub">
+<Call c="19" l="204" n="display_itm" t="F"/>
+</Fct>
+<Fct c="11" el="159" l="157" n="display_itm()" t="F" v="pub"/>
+<Fct c="10" el="151" l="133" n="fetch_rel_itm(p_fetch_flag SMALLINT)" t="F" v="pub">
+<Call c="8" l="138" n="fetch_itm" t="F"/>
+<Call c="10" l="142" n="display_itm" t="F"/>
+</Fct>
+<Fct c="10" el="129" l="103" n="fetch_itm(p_fetch_flag SMALLINT)" t="F" v="pub"/>
+<Fct c="10" el="99" l="79" n="itm_select(p_where_clause STRING)" t="F" v="pub">
+<Call c="8" l="91" n="fetch_itm" t="F"/>
+</Fct>
+<Fct c="10" el="77" l="56" n="get_dsg_cnt_itm(p_where_clause STRING)" t="F" v="pub"/>
+<Fct c="10" el="54" l="19" n="query_itm()" t="F" v="pub">
+<Call c="10" l="36" n="get_dsg_cnt_itm" t="F"/>
+<Call c="13" l="40" n="itm_select" t="F"/>
+<Call c="12" l="49" n="display_itm" t="F"/>
+</Fct>
+</File>
+<File n="item_main.4gl" s="2" ts="20210127140102665">
+<Dep t="item_fun.4gl"/>
+<Fct c="11" el="49" l="3" n="open_item()" t="F" v="pub">
+<Call c="12" i="item_fun" l="15" n="query_itm" t="F"/>
+<Call c="14" i="item_fun" l="18" n="fetch_rel_itm" t="F"/>
+<Call c="14" i="item_fun" l="25" n="fetch_rel_itm" t="F"/>
+<Call c="11" i="item_fun" l="30" n="inpupd_itm" t="F"/>
+<Call c="14" i="item_fun" l="31" n="insert_itm" t="F"/>
+<Call c="11" i="item_fun" l="34" n="delete_check_itm" t="F"/>
+<Call c="15" i="item_fun" l="35" n="delete_itm" t="F"/>
+<Call c="8" i="item_fun" l="38" n="inpupd_itm" t="F"/>
+<Call c="14" i="item_fun" l="39" n="update_itm" t="F"/>
+</Fct>
+</File>
+<File n="supplier_fun.4gl" s="2" ts="20210127140102644">
+<Fct c="10" el="372" l="365" n="clean_up_sup()" t="F" v="pub"/>
+<Fct c="10" el="362" l="335" n="delete_check_sup()" t="F" v="pub"/>
+<Fct c="10" el="333" l="319" n="delete_sup()" t="F" v="pub"/>
+<Fct c="10" el="317" l="249" n="update_sup()" t="F" v="pub"/>
+<Fct c="10" el="247" l="229" n="insert_sup()" t="F" v="pub"/>
+<Fct c="11" el="226" l="164" n="inpupd_sup(au_flag CHAR(1))" t="F" v="pub">
+<Call c="19" l="204" n="display_sup" t="F"/>
+</Fct>
+<Fct c="11" el="159" l="157" n="display_sup()" t="F" v="pub"/>
+<Fct c="10" el="151" l="133" n="fetch_rel_sup(p_fetch_flag SMALLINT)" t="F" v="pub">
+<Call c="8" l="138" n="fetch_sup" t="F"/>
+<Call c="10" l="142" n="display_sup" t="F"/>
+</Fct>
+<Fct c="10" el="129" l="103" n="fetch_sup(p_fetch_flag SMALLINT)" t="F" v="pub"/>
+<Fct c="10" el="99" l="79" n="sup_select(p_where_clause STRING)" t="F" v="pub">
+<Call c="8" l="91" n="fetch_sup" t="F"/>
+</Fct>
+<Fct c="10" el="77" l="56" n="get_dsg_cnt_sup(p_where_clause STRING)" t="F" v="pub"/>
+<Fct c="10" el="54" l="19" n="query_sup()" t="F" v="pub">
+<Call c="10" l="36" n="get_dsg_cnt_sup" t="F"/>
+<Call c="13" l="40" n="sup_select" t="F"/>
+<Call c="12" l="49" n="display_sup" t="F"/>
+</Fct>
+</File>
+<File n="supplier_main.4gl" s="2" ts="20210127140102688">
+<Dep t="supplier_fun.4gl"/>
+<Fct c="10" el="49" l="3" n="open_supplier()" t="F" v="pub">
+<Call c="12" i="supplier_fun" l="15" n="query_sup" t="F"/>
+<Call c="14" i="supplier_fun" l="18" n="fetch_rel_sup" t="F"/>
+<Call c="14" i="supplier_fun" l="25" n="fetch_rel_sup" t="F"/>
+<Call c="11" i="supplier_fun" l="30" n="inpupd_sup" t="F"/>
+<Call c="14" i="supplier_fun" l="31" n="insert_sup" t="F"/>
+<Call c="11" i="supplier_fun" l="34" n="delete_check_sup" t="F"/>
+<Call c="15" i="supplier_fun" l="35" n="delete_sup" t="F"/>
+<Call c="8" i="supplier_fun" l="38" n="inpupd_sup" t="F"/>
+<Call c="14" i="supplier_fun" l="39" n="update_sup" t="F"/>
+</Fct>
+</File>
+<File n="tans_main.4gl" s="2" ts="20210129195300396">
+<Dep t="DynamicUI.4gl"/>
+<Dep t="UIHelper.4gl"/>
+<Dep t="enums.4gl"/>
+<Fct c="18" el="542" l="537" n="errorHandler()" t="F" v="prv">
+<Call c="18" i="UIHelper" l="541" n="informationDialog" t="F"/>
+</Fct>
+<Fct c="17" el="495" l="233" n="inputOrder(pMode INTEGER)" t="F" v="pub"/>
+<Fct c="18" el="231" l="175" n="viewOrders()" t="F" v="prv">
+<Call c="20" l="189" n="fetchRecord" t="F"/>
+<Call c="20" l="193" n="fetchRecord" t="F"/>
+<Call c="20" l="197" n="fetchRecord" t="F"/>
+<Call c="20" l="201" n="fetchRecord" t="F"/>
+<Call c="20" l="205" n="inputOrder" t="F"/>
+<Call c="24" l="206" n="fetchRecord" t="F"/>
+<Call c="20" l="211" n="inputOrder" t="F"/>
+<Call c="24" l="212" n="fetchRecord" t="F"/>
+<Call c="25" i="UIHelper" l="217" n="deleteConfirmation" t="F"/>
+<Call c="24" l="219" n="fetchRecord" t="F"/>
+</Fct>
+<Fct c="18" el="173" l="114" n="fetchRecord(pFetchAction INTEGER)" t="F" v="prv"/>
+<Fct c="18" el="109" l="82" n="buildQuery(pWherePart STRING)" t="F" v="prv">
+<Call c="33" l="100" n="fetchRecord" t="F"/>
+</Fct>
+<Fct c="18" el="80" l="60" n="searchOrders()" t="F" v="prv">
+<Call c="32" i="DynamicUI" l="66" n="dynamicConstruct" t="F"/>
+<Call c="12" l="68" n="buildQuery" t="F"/>
+<Call c="18" l="69" n="viewOrders" t="F"/>
+</Fct>
+<Fct c="11" el="58" l="42" n="open_trans()" t="F" v="pub">
+<Call c="29" l="44" n="errorHandler" t="F"/>
+<Call c="11" l="52" n="searchOrders" t="F"/>
+</Fct>
+</File>
+<File n="supilier_main.4gl" s="2" ts="20210201110936155">
+<Dep t="DynamicUI.4gl"/>
+<Dep t="UIHelper.4gl"/>
+<Dep t="enums.4gl"/>
+<Fct c="18" el="542" l="537" n="errorHandler()" t="F" v="prv">
+<Call c="18" i="UIHelper" l="541" n="informationDialog" t="F"/>
+</Fct>
+<Fct c="17" el="495" l="233" n="inputOrder_sup(pMode INTEGER)" t="F" v="pub"/>
+<Fct c="18" el="231" l="175" n="viewOrders()" t="F" v="prv">
+<Call c="20" l="189" n="fetchRecord" t="F"/>
+<Call c="20" l="193" n="fetchRecord" t="F"/>
+<Call c="20" l="197" n="fetchRecord" t="F"/>
+<Call c="20" l="201" n="fetchRecord" t="F"/>
+<Call c="20" l="205" n="inputOrder_sup" t="F"/>
+<Call c="24" l="206" n="fetchRecord" t="F"/>
+<Call c="20" l="211" n="inputOrder_sup" t="F"/>
+<Call c="24" l="212" n="fetchRecord" t="F"/>
+<Call c="25" i="UIHelper" l="217" n="deleteConfirmation" t="F"/>
+<Call c="24" l="219" n="fetchRecord" t="F"/>
+</Fct>
+<Fct c="18" el="173" l="114" n="fetchRecord(pFetchAction INTEGER)" t="F" v="prv"/>
+<Fct c="18" el="109" l="82" n="buildQuery(pWherePart STRING)" t="F" v="prv">
+<Call c="33" l="100" n="fetchRecord" t="F"/>
+</Fct>
+<Fct c="18" el="80" l="60" n="searchOrders()" t="F" v="prv">
+<Call c="32" i="DynamicUI" l="66" n="dynamicConstruct" t="F"/>
+<Call c="12" l="68" n="buildQuery" t="F"/>
+<Call c="18" l="69" n="viewOrders" t="F"/>
+</Fct>
+<Fct c="11" el="58" l="42" n="open_sup()" t="F" v="pub">
+<Call c="29" l="44" n="errorHandler" t="F"/>
+<Call c="11" l="52" n="searchOrders" t="F"/>
+</Fct>
+</File>
+<File n="finnace-module.4gl" s="2" ts="20210201110643300">
+<Dep t="account_main.4gl"/>
+<Dep t="com_main.4gl"/>
+<Dep t="cust_main.4gl"/>
+<Dep t="item_main.4gl"/>
+<Dep t="supplier_main.4gl"/>
+<Dep t="tans_main.4gl"/>
+<Dep t="supilier_main.4gl"/>
+<Fct c="1" el="44" l="11" n="main()" t="F" v="pub">
+<Call c="18" i="account_main" l="19" n="open_account" t="F"/>
+<Call c="18" i="com_main" l="22" n="open_company" t="F"/>
+<Call c="18" i="cust_main" l="25" n="open_customer" t="F"/>
+<Call c="18" i="item_main" l="28" n="open_item" t="F"/>
+<Call c="18" i="supplier_main" l="31" n="open_supplier" t="F"/>
+<Call c="19" i="tans_main" l="34" n="open_trans" t="F"/>
+<Call c="19" i="supilier_main" l="37" n="open_sup" t="F"/>
+</Fct>
+</File>
+</WorkspaceDatabase>

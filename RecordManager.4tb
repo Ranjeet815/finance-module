@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ANSI_X3.4-1968"?>
+<ToolBar>
+  <ToolBarItem name="first" text="First" />
+  <ToolBarItem name="previous" text="Previous" />
+  <ToolBarItem name="next" text="Next" />
+  <ToolBarItem name="last" text="Last" />
+  <ToolBarSeparator/>
+  <ToolBarItem name="do_search" text="Find" />
+   <ToolBarItem name="add_rec" text="Add" />
+  <ToolBarItem name="edit_rec" text="Edit" />
+  <ToolBarItem name="del_rec" text="Delete" />
+  <ToolBarSeparator/>
+   
+   <ToolBarItem name="save" text="Save" />
+  <ToolBarItem name="cancel" text="Cancel" />
+</ToolBar>
